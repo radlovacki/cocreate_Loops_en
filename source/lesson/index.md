@@ -1,10 +1,11 @@
 ---
 status: exclude
 ---
-# Detailed
+# Lesson
 
 ```{toctree}
 :maxdepth: 2
 
-activity_example
+cryptography
+caesar
 ```

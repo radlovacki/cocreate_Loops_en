@@ -1,6 +1,6 @@
 ﻿---
 status: exclude
-alias: PLCT_Template
+alias: Loops and Cryptography
 short_description: Short course description
 long_description: >
     <p>This course will introduce you ...</p>
@@ -27,11 +27,10 @@ Course author: Petlja Foundation
 This course is published by Petlja Foundation under the
 [Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.sr_LATN).
 
-
 ```{toctree}
 :maxdepth: 2
 :caption: Contents
 :hidden:
 
-welcome/index
-detailed/index
+intro/index
+lesson/index
