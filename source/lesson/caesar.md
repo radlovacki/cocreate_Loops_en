@@ -91,7 +91,11 @@ the output should be:
 nikolatesla
 ```
 
-## Solution
+## Start the assignment
+
+**---===[ EMBED OR LINK THE GRADER ]===---**
+
+## Solution hints
 
 Since there are 26 letters in the English alphabet, the position of each letter
 can be represented by a number from 0 to 25.

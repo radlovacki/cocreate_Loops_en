@@ -1,5 +1,8 @@
 # Conditions and loops
 
+To successfully master the material in the next lesson, it is necessary to know
+the basic facts about working with conditions and loops.
+
 ## Conditions
 
 In most modern programming languages, conditional statements are used to make

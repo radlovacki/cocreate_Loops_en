@@ -1,13 +1,13 @@
 # Characters and strings
 
+Understanding how characters and strings are represented will help you to
+handle text correctly in the following lesson, ensuring proper data processing.
+
 The character data type, commonly referred to as char, is used to represent
 individual characters. Since computers can only store binary values, characters
 must be encoded as numbers. In modern computer systems, either ASCII or Unicode
 encoding schemes are used. Older programming languages (e.g., C) typically rely
 on ASCII, while modern languages (e.g., C#) support Unicode.
-
-Understanding how characters and strings are represented will help you to
-handle text correctly in the following lesson, ensuring proper data processing.
 
 ## ASCII
 

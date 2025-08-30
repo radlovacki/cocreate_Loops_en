@@ -8,4 +8,6 @@ status: exclude
 
 cryptography
 caesar
+skytale
+xor
 ```
