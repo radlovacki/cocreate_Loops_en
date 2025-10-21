@@ -5,7 +5,7 @@ inputs differ. It's a fundamental binary operation with important applications
 in computer science and cryptography.
 
 | A | B | A XOR B |
-| - | - | ------- |
+| - | - | :-----: |
 | 0 | 0 | 0       |
 | 0 | 1 | 1       |
 | 1 | 0 | 1       |
@@ -14,53 +14,65 @@ in computer science and cryptography.
 For example, to encrypt the word "HELLO" using the key "KEY", you should first
 convert `HELLO` to binary...
 
-* `H` (ASCII 72): `01001000`
-* `E` (ASCII 69): `01000101`
-* `L` (ASCII 76): `01001100`
-* `L` (ASCII 76): `01001100`
-* `O` (ASCII 79): `01001111`
+| Char | ASCII | Binary   |
+| ---- | ----- | -------- |
+| H    | 72    | 01001000 |
+| E    | 69    | 01000101 |
+| L    | 76    | 01001100 |
+| L    | 76    | 01001100 |
+| O    | 79    | 01001111 |
 
 ...then convert `KEY` to binary...
 
-* `K` (ASCII 75): `01001011`
-* `E` (ASCII 69): `01000101`
-* `Y` (ASCII 89): `01011001`
+| Char | ASCII | Binary   |
+| ---- | ----- | -------- |
+| K    | 75    | 01001011 |
+| E    | 69    | 01000101 |
+| Y    | 89    | 01011001 |
 
 ...and finally do the encryption - XOR each character with key, repeating the
 key as many times as necessary:
 
-* `H ⊕ K`: `01001000 ⊕ 01001011` = `00000011` (ASCII 3)
-* `E ⊕ E`: `01000101 ⊕ 01000101` = `00000000` (ASCII 0)
-* `L ⊕ Y`: `01001100 ⊕ 01011001` = `00010101` (ASCII 21)
-* `L ⊕ K`: `01001100 ⊕ 01001011` = `00000111` (ASCII 7)
-* `O ⊕ E`: `01001111 ⊕ 01000101` = `00001010` (ASCII 10)
+```text
+H ⊕ K: 01001000 ⊕ 01001011 = 00000011 (ASCII 3)
+E ⊕ E: 01000101 ⊕ 01000101 = 00000000 (ASCII 0)
+L ⊕ Y: 01001100 ⊕ 01011001 = 00010101 (ASCII 21)
+L ⊕ K: 01001100 ⊕ 01001011 = 00000111 (ASCII 7)
+O ⊕ E: 01001111 ⊕ 01000101 = 00001010 (ASCII 10)
+```
 
-The resulting ciphertext are all ASCII non-printable characters with values 3,
-0, 21, 7 and 10. If a malicious attacker intercepts this encrypted text, he
-won't see anything, because all charachers are non-printable.
+The resulting ciphertext consists of ASCII non-printable characters with
+decimal values 3, 0, 21, 7, and 10. If an attacker intercepted this message,
+they would see only unreadable binary data, since the characters are
+non-printable.
 
 To decrypt the ciphertext you should XOR ciphertext with same key:
 
-* `3 ⊕ K`: `00000011 ⊕ 01001011` = `01001000` (ASCII 72: H)
-* `0 ⊕ E`: `00000000 ⊕ 01000101` = `01000101` (ASCII 69: E)
-* `21 ⊕ Y`: `00010101 ⊕ 01011001` = `01001100` (ASCII 76: L)
-* `7 ⊕ K`: `00000111 ⊕ 01001011` = `01001100` (ASCII 76: L)
-* `10 ⊕ E`: `00001010 ⊕ 01000101` = `01001111` (ASCII 79: O)
+```text
+3  ⊕ K: 00000011 ⊕ 01001011 = 01001000 (ASCII 72 → H)
+0  ⊕ E: 00000000 ⊕ 01000101 = 01000101 (ASCII 69 → E)
+21 ⊕ Y: 00010101 ⊕ 01011001 = 01001100 (ASCII 76 → L)
+7  ⊕ K: 00000111 ⊕ 01001011 = 01001100 (ASCII 76 → L)
+10 ⊕ E: 00001010 ⊕ 01000101 = 01001111 (ASCII 79 → O)
+```
 
-In real world applications, reusing the same key for multiple messages is
-vulnerable to frequency analysis and known-plaintext attacks. XOR doesn't hide
-patterns well without proper key management - the key should be at least as
-long as the message for good security. But, for educational purposes to
-understand cryptographic concepts, and basic data protection where security
-isn't critical, the XOR is perfect!
+The XOR operation is self-inverse — applying XOR twice with the same key
+restores the original data.
+
+In real-world applications, reusing the same key for multiple messages makes
+XOR encryption vulnerable to frequency analysis and known-plaintext attacks.
+XOR alone doesn’t provide strong security unless the key is properly managed
+and is at least as long as the message — as in a one-time pad. However, for
+educational purposes and basic demonstrations of cryptographic principles, XOR
+is simple and ideal.
 
 ## Simple assignment
 
 Create a console application in any programming language to encrypt and decrypt
 messages using the XOR operation.
 
-The allowed alphabet for messages (for plaintext and for the key) can include
-only lowercase letters of the English alphabet:
+The allowed alphabet for messages (both plaintext and key) includes only
+lowercase English letters:
 
 ```text
 Σ = { a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z }

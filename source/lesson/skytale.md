@@ -1,5 +1,11 @@
 # Skytale
 
+After completing this lesson, you will be able to:
+
+* Explain how the Skytale cipher works.
+* Implement encryption and decryption using simple array or string operations.
+* Understand how physical encryption devices can be modeled digitally.
+
 The Skytale is one of the oldest known tools for encryption, dating back to
 ancient Greece around 400 BC. It was a simple cylindrical device used by the
 Spartans to send secret messages during military campaigns.
@@ -16,8 +22,8 @@ If you want to encrypt the message:
 attackatdawn
 ```
 
-and you choose a rod that allows **4 letters per turn**, first you will write
-the message vertically in columns, filling rows of length 4:
+and you choose a rod that allows **4 letters per turn**, you first write the
+message vertically in columns, forming rows of length 4:
 
 ```text
 a t t a
@@ -28,7 +34,7 @@ d a w n
 The ciphertext is then created by reading row by row:
 
 ```text
-atcadttkawtan
+acdtkatawatn
 ```
 
 To decrypt, the receiver rewinds the strip around a rod of the same diameter
@@ -39,7 +45,7 @@ and reads vertically again to reconstruct the original message.
 Create a console application in any programming language to encrypt and decrypt
 messages using the Skytale cipher.
 
-The allowed alphabet for messages can include only lowercase letters of the
+The allowed alphabet for messages includes only the lowercase letters of the
 English alphabet:
 
 ```text
@@ -67,7 +73,7 @@ attackatdawn
 the output should be:
 
 ```text
-atcadttkawtan
+acdtkatawatn
 ```
 
 ### Test example 2
@@ -75,7 +81,7 @@ atcadttkawtan
 If the input is:
 
 ```text
-atcadttkawtan
+acdtkatawatn
 4
 2
 ```
@@ -116,3 +122,8 @@ encryption and decryption.
 
 Modify the program to read plaintext or ciphertext from a file and write
 results to another file.
+
+### Handle incomplete rows
+
+Modify your program so that if the last row is shorter than `k`, it still
+encrypts and decrypts correctly by handling missing characters or padding.
