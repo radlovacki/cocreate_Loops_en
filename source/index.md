@@ -1,6 +1,7 @@
 ﻿---
 status: exclude
-alias: Loops and Cryptography
+alias: Loops_and_Cryptography
+lang: en
 short_description: Short course description
 long_description: >
     <p>This course will introduce you ...</p>
