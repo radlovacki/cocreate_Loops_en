@@ -2,7 +2,7 @@
 status: exclude
 alias: Loops and Cryptography
 short_description: Introduction to Cryptography with Loops
-long_description: >
+long_description:
     <p>In this course, you will learn to apply loops on characters and strings to implement basic cryptographic algorithms.</p>
     <p>
     <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.sr_LATN">
@@ -19,8 +19,7 @@ will_learn:
     - XOR
 
 needed: 
-    - A basic personal computer system with Internet access. Optionally, a computer
-    system with specific programming language IDE.
+    - A basic personal computer system with Internet access. Optionally, a computer system with specific programming language IDE.
 
 useful:
     - Microsoft C++, C, and Assembler documentation:
